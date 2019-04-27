@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<style>
+    .noidung {
+        margin: auto;
+        width: 28%;
+        padding: 10px;
+    }
+</style>
+<body background="ryoJuP.jpeg">
+<div class="noidung">
+    &emsp; &emsp; Doanh số (triệu vnđ) :
+<br>
+   &emsp; &emsp; <label for="doanhso"></label><input type="text" id="doanhso" style="background-color: orange;text-align: center">
+    <br><br>
+    &emsp; &emsp; &emsp; &emsp; <input type="button" value="Tính" onclick="tinh();">
+<br><br><br>
+Số tiền hoa hồng nhận được (triệu vnđ) :
+<br>
+    <textarea cols="30" rows="2" type="text" id="hoahong" style="background-color: orange;text-align: center"></textarea>
+<br><br><br>
+</div>
+<script>
+function tinh() {
+    let a = parseFloat(document.getElementById("doanhso").value);
+    let b = parseFloat(document.getElementById("hoahong").value);
+        // Nếu doanh số đạt trên 650tr vnđ / tháng, thưởng hoa hồng 2,5%
+    if (a > 650) {
+        b = a * 2.5 / 100;
+        document.getElementById('hoahong').innerHTML = parseFloat(b);
+        // Nếu doannh số đạt từ 550tr vnđ - 649tr vnđtháng / tháng, thưởng hoa hồng 2%
+    } else if (a >= 550 && a < 650) {
+        b = a * 2 / 100;
+        document.getElementById('hoahong').innerHTML = parseFloat(b);
+        // Nếu doanh số đạt từ 450tr vnđ - 549tr vnđ / tháng, thưởng hoa hồng 1%
+    } else if (a >= 450 && a < 550) {
+        b = a * 1 / 100;
+        document.getElementById('hoahong').innerHTML = parseFloat(b);
+    } else {
+        b = 0;
+        document.getElementById('hoahong').innerHTML = "Cố gắng thêm 1 chút nữa thôi!";
+    }
+}
+</script>
+</body>
+</html>

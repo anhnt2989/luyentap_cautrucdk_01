@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body background="bg3.jpg">
+<style>
+    .ketqua {
+        margin: auto;
+        width: 32%;
+        padding: 10px;
+    }
+    .noidung {
+        margin: auto;
+        width: 15%;
+        padding: 10px;
+    }
+</style>
+<div class="noidung">
+    Điểm kiểm tra: <br>
+    <input type="number" id="diem1" style="background-color: orange">
+<br><br>
+    Điểm thi giữa kỳ: <br>
+<input type="number" id="diem2" style="background-color: orange">
+<br><br>
+    Điểm thi cuối kỳ: <br>
+    <input type="number" id="diem3" style="background-color: orange">
+<br><br>
+    &emsp; <input type="button" value="Xếp loại ngay" onclick="tinh();">
+</div>
+<br><br><br>
+<div class="ketqua">
+    <textarea style="background-color: orange;text-align: center" id="kq" cols="50" rows="3"></textarea>
+</div>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("diem1").value);
+        let b = parseFloat(document.getElementById("diem2").value);
+        let c = parseFloat(document.getElementById("diem3").value);
+        let dtb = parseFloat((a + b*2 + c*3) / 6);
+        // Nếu điểm trung bình đạt từ 9 trở lên, loại xuất sắc
+        if (dtb>=9) {
+            let kq1 = "Chúc mừng, em được  xếp vào hạng xuất sắc!";
+            document.getElementById('kq').innerHTML = kq1;
+        // Nếu điểm trung bình đạt từ 8 - 8,9, loại giỏi
+        } else if (dtb<9 && dtb>=8) {
+            let kq2 = "Chúc mừng, em được xếp vào hạng Giỏi!";
+            document.getElementById('kq').innerHTML = kq2;
+        // Nếu điểm trung bình đạt từ 7 - 7,9, loại
+        } else if (dtb>=7 && dtb<8) {
+            let kq3 = "Em được xếp hạng Khá, hãy cố gắng thêm nhé!";
+            document.getElementById('kq').innerHTML = kq3;khá
+        // Nếu điểm trung bình đạt từ 6 - 6,9, loại trung bình
+        } else if (dtb>=6 && dtb<7) {
+            let kq4 = "Em được xếp hạng Trung bình khá, hãy cố gắng thêm nhé!";
+            document.getElementById('kq').innerHTML = kq4;
+        } else if (dtb>=5 && dtb<6) {
+            let kq5 = "Em được xếp hạng Trung bình, hãy cố gắng thêm nhé!";
+            document.getElementById('kq').innerHTML = kq5;
+        } else if (dtb>=4 && dtb<5) {
+            let kq6 = "Em bị xếp vào hạng Yếu, hãy cố gắng học tập chăm chỉ hơn!";
+            document.getElementById('kq').innerHTML = kq6;
+        } else {
+            let kq7 = "Em bị xếp vào hạng Kém, tốt nhất nên học lại đi!";
+            document.getElementById('kq').innerHTML = kq7;
+        }
+    }
+</script>
+</body>
+</html>

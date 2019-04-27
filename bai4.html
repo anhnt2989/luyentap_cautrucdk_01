@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<input type="number" id="num1" style="background-color: orange"/>
+<input type="number" id="num2" style="background-color: orange"/>
+<input type="number" id="num3" style="background-color: orange"/>
+&emsp;
+<input type="button" value="Tìm số lớn nhất" onclick="exe();">
+<br><br><br>
+<p id="kq"></p>
+<script>
+    let a = parseInt(document.getElementById("num1").value);
+    let b = parseInt(document.getElementById("num2").value);
+    let c = parseInt(document.getElementById("num3").value);
+    let nums = [a,b,c];
+    let max = Math.max.apply(Math,nums);
+function exe() {
+    switch (max) {
+        case a :
+            let kq1 = a + " là số lớn nhất";
+            document.getElementById('kq').innerHTML = kq1;
+            break;
+        case b :
+            let kq2 = b + " là số lớn nhất";
+            document.getElementById('kq').innerHTML = kq2;
+            break;
+        case c :
+            let kq3 = c + " là số lớn nhất";
+            document.getElementById('kq').innerHTML = kq3;
+    }
+}
+</script>
+</body>
+</html>

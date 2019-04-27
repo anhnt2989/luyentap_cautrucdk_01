@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<style type="text/css">
+    p {
+        text-align: left;
+    }
+    .cd {
+        text-align: left;
+    }
+    .mc {
+        text-align: left;
+    }
+    .mb {
+        text-align: left;
+    }
+    .ab {
+        text-align: left;
+    }
+    .bt {
+        text-align: left;
+    }
+    .rs {
+        text-align: left;
+    }
+    </style>
+    <p>Số phút gọi đến số điện thoại cố định trong nước :</p>
+<div class="cd"><label for="codinh"></label><input type="text" id="codinh" style="background-color: orange"></div>
+<br><br>
+    <p>Số phút gọi đến số điện thoại di động trong nước :</p>
+<div class="mb"><label for="mobile"></label><input type="text" id="mobile" style="background-color: orange"></div>
+<br><br>
+    <p>Số phút gọi điện quốc tế :</p>
+<div class="ab"><label for="abroad"></label><input type="text" id="abroad" style="background-color: orange"></div>
+    <br><br>
+    <p>Cước thuê bao :</p>
+<div class="mc"><label for="mcuoc"></label><input type="text" id="mcuoc" style="background-color: orange"></div>
+    <br>
+<div class="bt">&emsp;&ensp;<input type="button" value="Tính ngay" onclick="tinh();"></div>
+<br><br>
+    <p>Tổng cước phí tháng này :</p>
+<div class="rs"><label for="kq"></label><textarea id="kq" style="background-color: orange;text-align: center"></textarea></div>
+<body background="telephone-wallpapers-28927-1678174.jpg" style="background-size: cover">
+<script>
+    function tinh() {
+        let ccd = parseFloat(document.getElementById("codinh").value);
+        let ccm = parseFloat(document.getElementById("mobile").value);
+        let cca = parseFloat(document.getElementById("abroad").value);
+        let cmc = parseFloat(document.getElementById("mcuoc").value);
+        // Cước gọi được tính như sau (số phút x giá tiền/phút) :
+        // Cố định trong nước : 2000đ/phút | Di động trong nước : 4000đ/phút | Quốc tế : 12000đ/phút
+        // Tổng cước phí hàng tháng sẽ = tổng của tất cả các mục nêu trên
+        document.getElementById('kq').innerHTML = (ccd * 2000 + ccm * 4000 + cca * 12000 + cmc);
+    }
+</script>
+</body>
+</html>
